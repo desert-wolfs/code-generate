@@ -30,6 +30,11 @@
             <property name="nullCatalogMeansCurrent" value="true"/>
         </jdbcConnection>
 
+        <!-- 字段自定义转换 -->
+        <javaTypeResolver  type="com.douniu.codegenerate.plugin.CustomTypeResolver">
+            <!--            <property name="forceBigDecimals" value="false"/>-->
+        </javaTypeResolver>
+
         <!-- 生成PO的包名和位置 -->
         <javaModelGenerator targetPackage="generate.entity" targetProject="src/main/java"/>
         <!-- 生成XML映射文件的包名和位置 -->
