@@ -30,6 +30,11 @@
             <property name="nullCatalogMeansCurrent" value="true"/>
         </jdbcConnection>
 
+        <!-- 字段自定义转换 -->
+        <javaTypeResolver  type="com.douniu.codegenerate.plugin.CustomTypeResolver">
+            <!--            <property name="forceBigDecimals" value="false"/>-->
+        </javaTypeResolver>
+
         <!-- 生成PO的包名和位置 -->
         <javaModelGenerator targetPackage="generate.entity" targetProject="src/main/java"/>
         <!-- 生成XML映射文件的包名和位置 -->
@@ -40,7 +45,7 @@
         </javaClientGenerator>
 
         <!-- 要生成对应表配置 -->
-        <table tableName="activity_gift_pool" domainObjectName="ActivityGiftPool"
+        <table tableName="game_rank_daily_statistics" domainObjectName="GameRankDailyStatistics"
                enableCountByExample="false"
                enableDeleteByExample="false"
                enableSelectByExample="false"
