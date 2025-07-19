@@ -19,9 +19,12 @@ public class CustomCommentGenerator implements CommentGenerator {
 
     @Override
     public void addFieldComment(Field field, IntrospectedTable introspectedTable, IntrospectedColumn introspectedColumn) {
-        field.addJavaDocLine("/**");
-        field.addJavaDocLine(" * " + introspectedColumn.getRemarks());
-        field.addJavaDocLine(" */");
+        if (introspectedColumn.getRemarks() != null && !introspectedColumn.getRemarks().trim().isEmpty()) {
+            field.addJavaDocLine("/**");
+            field.addJavaDocLine(" * " + introspectedColumn.getRemarks());
+            field.addJavaDocLine(" */");
+        }
+
     }
 
     @Override
